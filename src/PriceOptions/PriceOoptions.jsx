@@ -24,7 +24,7 @@ const gyms = [
       "name": "Yoga Haven",
       "price": "45",
       "membership": "Standard Membership",
-      "features": ["Yoga Classes", "Meditation Sessions", "Holistic Wellness"]
+      "features": ["Yoga Classes", "Meditation Sessions", "Holistic Wellness","Yoga Classes", "Meditation Sessions", "Holistic Wellness"]
       
     }
   ];
@@ -32,7 +32,7 @@ const gyms = [
     return (
         <div>
            <h1 className="text-5xl font-bold text-center mt-8">Best price in the town</h1>
-           <div className="flex gap-5 justify-center mt-10">
+           <div className="grid md:grid-cols-3 gap-5 px-8 justify-center mt-10">
            {
             gyms.map(gym => <PriceOption key={gym.id} gym={gym}></PriceOption>)
            }
