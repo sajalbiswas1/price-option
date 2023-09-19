@@ -1,5 +1,6 @@
 import './App.css'
 import PriceOoptions from './PriceOptions/PriceOoptions'
+import LineChart from './component/LineChart/LineChart'
 import Navbar from './component/Navbar/Navbar'
 // import DaisyNav from './component/DaisyNav/DaisyNav'
 
@@ -11,6 +12,7 @@ function App() {
       {/* <DaisyNav></DaisyNav> */}
       <h1 className='text-4xl bg-red-300'>React + vite</h1>
       <PriceOoptions></PriceOoptions>
+      <LineChart></LineChart>
       
     </>
   )
