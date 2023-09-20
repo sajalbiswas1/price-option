@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Audio } from "react-loader-spinner";
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from "recharts";
 
 
 const Phones = () => {
     const [phone, setPhone]=useState([])
+    const [loading, setLoading] = useState(true)
     console.log(phone)
     useEffect(()=>{
         // fetch('https://openapi.programming-hero.com/api/phones?search=iphone')
@@ -20,12 +22,23 @@ const Phones = () => {
                 }
                 return obj;
             })
+            setLoading(false)
             setPhone(fakePhoneData)
         })
     },[])
    
     return (
         <div className="mb-32 ml-24 mt-16">
+            {loading && <Audio  height = "80"
+                width = "80"
+                radius = "9"
+                color = 'green'
+                ariaLabel = 'three-dots-loading'     
+                wrapperStyle
+                wrapperClass>
+                
+                </Audio>
+            }
             <h3 className="text-4xl">Phone : {phone.length}</h3>
             <BarChart height={300} width={1200} data={phone}>
                 <XAxis dataKey={'name'}></XAxis>
