@@ -7,6 +7,8 @@ import { Bar, BarChart, Tooltip, XAxis, YAxis } from "recharts";
 const Phones = () => {
     const [phone, setPhone]=useState([])
     const [loading, setLoading] = useState(true)
+    const [load, setLoad] = useState(true)
+
     console.log(phone)
     useEffect(()=>{
         // fetch('https://openapi.programming-hero.com/api/phones?search=iphone')
@@ -39,7 +41,9 @@ const Phones = () => {
                 
                 </Audio>
             }
-            <h3 className="text-4xl">Phone : {phone.length}</h3>
+            <h3 className={`${load?'text-4xl':''}`}>Phone : {phone.length}</h3>
+            <button onClick={()=> setLoad(!load)}>Text big</button>
+
             <BarChart height={300} width={1200} data={phone}>
                 <XAxis dataKey={'name'}></XAxis>
                 <YAxis dataKey={'price'}></YAxis>
